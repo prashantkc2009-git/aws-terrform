@@ -4,17 +4,18 @@ This repository contains a modular and flexible Terraform configuration for depl
 
 ## Directory Structure
 
+```
 network-infra/
-├── core-network.yaml         # YAML config file to customize your network
-├── main.tf                   # Terraform provider configuration
-├── locals.tf                 # Local variables loaded from YAML
-├── vpc.tf                    # VPC and secondary CIDR block definitions
-├── igw.tf                    # Internet Gateway resource
-├── nat.tf                    # NAT Gateways and Elastic IPs
-├── subnet.tf                 # Public and private subnets
-├── route_tables.tf           # Route tables, routes, and associations
-├── README.md                 # This file
-
+    ├── core-network.yaml         # YAML config file to customize your network
+    ├── main.tf                   # Terraform provider configuration
+    ├── locals.tf                 # Local variables loaded from YAML
+    ├── vpc.tf                    # VPC and secondary CIDR block definitions
+    ├── igw.tf                    # Internet Gateway resource
+    ├── nat.tf                    # NAT Gateways and Elastic IPs
+    ├── subnet.tf                 # Public and private subnets
+    ├── route_tables.tf           # Route tables, routes, and associations
+    ├── README.md                 # This file
+```
 
 ## Prerequisites
 
