@@ -1,6 +1,6 @@
 ## 🛠️ AWS Core Network Provisioning with Terraform & local YAML
 
-This repository contains a modular and flexible Terraform configuration for deploying foundational AWS network infrastructure. It is designed to support multiple public/private subnets, route tables, Internet Gateways (IGW), NAT Gateways, and secondary CIDR blocks. This Terraform setup dynamically reads configuration from a YAML file (e.g., `core-network-ap-south-1.yaml`) and provisions the core network components in AWS based on its contents.
+This repository contains a modular and flexible Terraform configuration for deploying foundational AWS network infrastructure. It is designed to support multiple public/private subnets, route tables, Internet Gateways (IGW), NAT Gateways, and secondary CIDR blocks. **This Terraform setup dynamically reads configuration from a YAML file (e.g., `core-network-ap-south-1.yaml`) and provisions the core network components in AWS based on its contents.**
 
 ## Directory Structure
 
