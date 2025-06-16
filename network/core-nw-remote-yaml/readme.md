@@ -2,6 +2,17 @@
 
 This repository contains a modular and flexible Terraform configuration for deploying foundational AWS network infrastructure. It is designed to support multiple public/private subnets, route tables, Internet Gateways (IGW), NAT Gateways, and secondary CIDR blocks.
 
+### Remote Configuration via GitHub
+This setup uses a remote YAML configuration file hosted in a GitHub repository to define the AWS network infrastructure. This approach allows centralized management of configuration across environments.
+
+**Remote YAML Source**
+```
+data "http" "config_file" {
+  url = "https://raw.githubusercontent.com/prashantkc2009-git/infra-config/main/terraform-aws/network/core-network-ap-south-1.yaml"
+}
+```
+This downloads the YAML file containing the network specification.
+
 ## Directory Structure
 
 ```
@@ -59,3 +70,8 @@ terraform apply
 	•	✅ Route tables with full control over routes
 	•	✅ Support for secondary CIDR blocks
 	•	✅ Easily extendable for future use
+
+## Why Remote YAML?
+	•	Centralized config for multiple environments (dev, staging, prod)
+	•	Easy updates without modifying Terraform code
+	•	Git version-controlled changes
