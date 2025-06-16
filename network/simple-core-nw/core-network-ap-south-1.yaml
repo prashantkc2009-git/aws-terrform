@@ -1,7 +1,13 @@
+# ----------------------------------
+# YAML CONFIGURATION FILE (core-network.yaml)
+# ----------------------------------
+
 aws_region: "us-east-1"
 
 vpc:
   cidr_block: "10.0.0.0/16"
+  secondary_cidr_blocks:
+    - "192.168.10.0/24"
 
 gateways:
   internet_gateway: true
@@ -31,15 +37,10 @@ route_tables:
       - cidr_block: "0.0.0.0/0"
         gateway: "nat-b"
 
-  private-rt-c:
-    routes:
-      - cidr_block: "0.0.0.0/0"
-        gateway: "nat-b"  # Sharing NAT-B for private-subnet-3
-
   intra-rt:
     routes:
       - cidr_block: "10.0.0.0/16"
-        gateway: "local"  # use if you dont want igw or nat-gw for traffic
+        gateway: "local"
 
 public_subnets:
   - name: "public-subnet-1"
@@ -55,6 +56,8 @@ public_subnets:
 private_subnets:
   - name: "private-subnet-1"
     cidr_block: "10.0.101.0/24"
+    extra_cidr_blocks:
+      - "192.168.10.0/24"
     availability_zone: "us-east-1a"
     route_table: "private-rt-a"
 
@@ -66,4 +69,4 @@ private_subnets:
   - name: "private-subnet-3"
     cidr_block: "10.0.103.0/24"
     availability_zone: "us-east-1c"
-    route_table: "private-rt-c"
+    route_table: "intra-rt"
