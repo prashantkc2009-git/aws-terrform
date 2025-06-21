@@ -1,13 +1,14 @@
 #Manually added by user
 aws-terrform.code-workspace
-.gitignore
-
+*/.gitignore
+*.pub
 # Local .terraform directories
 .terraform/
 
 # .tfstate files
 *.tfstate
 *.tfstate.*
+.terraform.lock.*
 
 # Crash log files
 crash.log
