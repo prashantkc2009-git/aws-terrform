@@ -1,6 +1,10 @@
-// This Terraform file defines the core VPC resources for the AWS network.
-// It creates the main VPC using a CIDR block from local variables and tags it appropriately.
-// It also associates any secondary IPv4 CIDR blocks to the VPC using a for_each loop over a local variable.
+// INPUT: 
+//   - local.vpc_cidr: The primary CIDR block for the main VPC (string).
+//   - local.vpc_secondary_cidrs: A list or set of secondary CIDR blocks to associate with the VPC.
+//
+// OUTPUT:
+//   - Creates an AWS VPC resource ("aws_vpc.main") with the specified primary CIDR block and a "Name" tag.
+//   - Associates each secondary CIDR block from local.vpc_secondary_cidrs to the VPC using
 
 resource "aws_vpc" "main" {
   cidr_block = local.vpc_cidr

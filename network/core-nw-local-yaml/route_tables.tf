@@ -1,6 +1,16 @@
-// This Terraform file manages AWS route tables and their associations.
-// It creates route tables for the VPC, defines routes based on local configuration,
-// and associates route tables with public and private subnets accordingly.
+// INPUT:
+//   - local.config.route_tables: Map of route table definitions, each with routes (cidr_block, gateway).
+//   - local.config.public_subnets: List of public subnet objects (each with name, route_table).
+//   - local.config.private_subnets: List of private subnet objects (each with name, route_table).
+//   - aws_vpc.main.id: The ID of the main VPC.
+//   - aws_internet_gateway.igw: Internet Gateway resource for public routes.
+//   - aws_nat_gateway.nat: Map of NAT Gateway resources for private routes.
+//
+// OUTPUT:
+//   - Creates AWS route tables for the VPC, each tagged by name.
+//   - Defines routes in each route table based on configuration, supporting IGW and NAT gateways.
+//   - Associates route tables with public and private subnets as specified.
+
 
 resource "aws_route_table" "this" {
   for_each = local.config.route_tables
