@@ -1,3 +1,6 @@
+// This Terraform file provisions Elastic IPs and NAT Gateways for the VPC,
+// based on configuration, and tags each NAT Gateway for identification.
+
 resource "aws_eip" "nat" {
   for_each = {
     for nat in local.config.nat_gateways : nat.name => nat

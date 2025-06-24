@@ -1,3 +1,6 @@
+// This Terraform file creates route tables and routes for the main AWS VPC based on remote configuration.
+// It also associates public and private subnets with their respective route tables.
+
 resource "aws_route_table" "this" {
   for_each = local.config.route_tables
   vpc_id   = aws_vpc.main.id

@@ -1,3 +1,6 @@
+// This Terraform file loads network configuration from a remote YAML file,
+// decodes it into local variables, and performs validation checks on VPC CIDR blocks.
+
 data "http" "config_file" {
   url = "https://raw.githubusercontent.com/prashantkc2009-git/infra-config/main/terraform-aws/network/core-network-ap-south-1.yaml"
 }

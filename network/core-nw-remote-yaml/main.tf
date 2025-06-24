@@ -1,3 +1,6 @@
+// This Terraform file configures the AWS provider and specifies the required provider version.
+// The AWS region is set using a local variable loaded from remote configuration.
+
 terraform {
   required_providers {
     aws = {

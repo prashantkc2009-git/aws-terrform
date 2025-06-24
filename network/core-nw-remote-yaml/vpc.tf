@@ -1,3 +1,6 @@
+// This Terraform file provisions the main AWS VPC using CIDR blocks from remote configuration.
+// It includes validation for CIDR correctness and overlap, and associates secondary CIDR blocks with the VPC.
+
 resource "aws_vpc" "main" {
   cidr_block = local.vpc_cidr
 

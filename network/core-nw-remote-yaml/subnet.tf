@@ -1,3 +1,6 @@
+// This Terraform file provisions public and private subnets for the main AWS VPC
+// using configuration loaded from a remote YAML file. Each subnet is tagged for identification.
+
 resource "aws_subnet" "public" {
   for_each = { for subnet in local.config.public_subnets : subnet.name => subnet }
 
