@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This startup script configures SSH password authentication, sets the ec2-user password,
+# installs telnet, and logs all actions. It is intended for use as EC2 user-data.
+
 # Redirect all output and errors to a log file
 exec > >(tee -a /var/log/startup-script.log) 2>&1
 set -euo pipefail

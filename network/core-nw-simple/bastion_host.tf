@@ -1,3 +1,7 @@
+// This Terraform file provisions a bastion host setup in the main AWS VPC.
+// It creates a dedicated subnet, associates it with the public route table,
+// configures a security group for SSH access, manages an EC2 key pair, and launches the bastion EC2 instance.
+
 locals {
     bastion_cidr = "10.0.104.0/24"
     bastion_az   = local.azs[0]

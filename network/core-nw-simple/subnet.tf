@@ -1,3 +1,8 @@
+// This Terraform file defines public and private subnets for the main AWS VPC.
+// It creates subnets using local variables for configuration, assigning each to the VPC.
+// Public subnets are set to auto-assign public IPs on launch.
+// Each subnet is tagged with its name, type, and component
+
 resource "aws_subnet" "public" {
   for_each = local.public_subnets
 

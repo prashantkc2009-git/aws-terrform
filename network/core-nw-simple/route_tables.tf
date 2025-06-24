@@ -1,3 +1,6 @@
+// This Terraform file defines public and private route tables for the main AWS VPC.
+// It associates subnets with the appropriate route tables and configures a public route for internet
+
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.my_vpc.id
 

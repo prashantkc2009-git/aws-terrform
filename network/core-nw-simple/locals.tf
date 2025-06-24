@@ -1,3 +1,6 @@
+// This Terraform file defines local variables for the environment, region, VPC CIDR, availability zones,
+// and subnet configurations used throughout the core network module.
+
 locals {
   environment = "dev"
   region = "us-east-1"
